@@ -1,0 +1,41 @@
+Julian Mendez, David Molina
+
+Input Variables
+====================================
+String characterName
+Int characterLevel
+String className
+Int conScore
+Bool isHillDwarf //0 is no 1 is yes
+Bool hasToughFeat //0 is no 1 is yes
+Bool isAveragedOrRolled //0 is average 1 is rolled
+
+
+Additional variables / structures
+====================================
+Dictionary for string of class and int of hit die
+2D array for constitution scores and modifiers
+Int hitDie
+Int totalHealth 
+
+
+Pseudocode
+====================================
+
+check className string for class and compare to dictionary to find out hit die
+make sure class given is a real class
+
+if (rolled) roll for level amount of times their class' hit die
+if (averaged) multiply average of their class' hit die by level (if the average of their die results in a float, round up to the nearest int)
+
+add result to totalHealth int
+
+if hill dwarf, add 1 hp per character level to totalHealth int
+if tough feat, add 2 hp per character level to totalHealth int
+
+for constitution loop through score column of 2D array and when there is a match, check the corresponding modifier
+add that modifier to totalHealth
+
+if totalHealth <= 0 set it to 1
+
+print out what the rolls were along with any modifiers and show the totalHealth 
